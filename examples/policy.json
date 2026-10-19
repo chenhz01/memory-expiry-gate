@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "default_ttl": "30d",
+  "fallback_on_expiry": "soft_delete",
+  "rules": [
+    {
+      "id": "r1",
+      "match": {
+        "kind": "secret"
+      },
+      "ttl": "1h",
+      "on_expiry": "hard_delete"
+    },
+    {
+      "id": "r2",
+      "match": {
+        "kind": "summary"
+      },
+      "ttl": "7d",
+      "on_expiry": "demote"
+    },
+    {
+      "id": "r3",
+      "match": {
+        "kind": "decision"
+      },
+      "ttl": "180d",
+      "on_expiry": "soft_delete"
+    },
+    {
+      "id": "r4",
+      "match": {
+        "kind": "preference"
+      },
+      "on_expiry": "demote"
+    }
+  ]
+}

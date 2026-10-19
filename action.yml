@@ -1,0 +1,15 @@
+name: memory-expiry-gate
+description: Give every memory a TTL, then prove the expiry semantics actually hold.
+branding:
+  icon: shield
+  color: blue
+inputs:
+  args:
+    description: Arguments passed to gate.py
+    required: false
+    default: "--help"
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      run: python "${{ github.action_path }}/gate.py" ${{ inputs.args }}
