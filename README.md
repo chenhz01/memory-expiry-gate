@@ -19,8 +19,7 @@
 One command, on a file you already have:
 
 ```bash
-python gate.py validate examples/policy.json && \
-  python gate.py simulate examples/store.json examples/policy.json --now 2026-10-19T00:00:00Z
+python gate.py simulate examples/store.json examples/policy.json --now 2026-10-19T00:00:00Z
 ```
 
 <details>
@@ -35,6 +34,20 @@ kept=1 audit=3
 ```
 
 </details>
+
+## Try it on your own input (optional)
+
+The one-liner above reads the bundled `examples/` as shipped, so it works on a fresh
+clone. To watch the gate act on something you wrote yourself, drive a scratch copy —
+`cp` resets it at the start of every run, so the result is the same each time and the
+bundled sample is never modified:
+
+```bash
+cp examples/policy.json demo-policy.json
+cp examples/store.json demo-store.json
+python gate.py validate demo-policy.json
+python gate.py simulate demo-store.json demo-policy.json --now 2026-10-19T00:00:00Z
+```
 
 ## What it does
 
@@ -117,7 +130,7 @@ mistaken for "it inspected my files".
 
 本页承诺的是 **15 项可机器复核的结构特征**，当前 **15/15**（2026-10-20 复核）。
 GitHub 从未公开 Trending 的排序算法，所以任何「保证上热门」的说法都在描述一件它不可能知道的事；
-本仓不这么说。跑 `python hotness.py` 可自行复算每一条。
+本仓不这么说。跑 `python tools/hotness.py` 可自行复算每一条。
 
 ## Start here (if you install only one)
 
@@ -151,7 +164,7 @@ Plain version: instead of asking you to trust a badge, I list what I actually ch
 name the script that checks it, and let you re-run it. If one of these lines is false,
 that is a bug in my repo, not a matter of taste.
 
-- Falsifiable side: `python hotness.py` re-runs every check and prints the evidence line
+- Falsifiable side: `python tools/hotness.py` re-runs every check and prints the evidence line
   for each one. You do not have to trust this paragraph.
 - Non-falsifiable side: GitHub has never published how Trending sorts repositories, so
   any repo promising you a guaranteed spot is telling you something it cannot know.
