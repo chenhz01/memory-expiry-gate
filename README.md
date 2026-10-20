@@ -52,7 +52,7 @@ Being explicit here is cheaper than a wrong expectation later.
 
 ## Exit codes
 
-`0` = policy valid and applied; `1` = invalid policy or bad input.
+`0` = policy is valid and applied. `1` = policy errors (missing TTL, contradictory rules). `2` = bad input. **The bundled example is a valid policy — it exits 0 on purpose.**
 
 ## Install
 
