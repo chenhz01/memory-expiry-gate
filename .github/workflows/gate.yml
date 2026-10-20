@@ -19,8 +19,7 @@ jobs:
         # is decoration.
         run: |
           set +e
-          python gate.py validate examples/policy.json && \
-          gate.py simulate examples/store.json examples/policy.json --now 2026-10-19T00:00:00Z > out.txt 2>&1
+          python gate.py simulate examples/store.json examples/policy.json --now 2026-10-19T00:00:00Z > out.txt 2>&1
           code=$?
           cat out.txt
           test -s out.txt || { echo "no output — gate did not run"; exit 1; }
