@@ -79,14 +79,14 @@ Python 3.9+. Nothing to `pip install` — stdlib only.
 # .github/workflows/gates.yml
 - uses: actions/checkout@v4
 
-- uses: chenhz01/memory-expiry-gate@v0.1.2
+- uses: chenhz01/memory-expiry-gate@v0.1.3
   with:
     # IMPORTANT: this path is inside YOUR repository.
     # The examples/ in this repo are NOT in your workspace — pass your own files.
     args: "simulate path/to/store.json path/to/policy.json --now 2026-10-19T00:00:00Z"
 ```
 
-Pin the tag (`@v0.1.2`) rather than `@main` — `main` moves.
+Pin the tag (`@v0.1.3`) rather than `@main` — `main` moves.
 Check [Releases](https://github.com/chenhz01/memory-expiry-gate/releases) for the newest tag; `v0.1.0` predates the
 fix that makes a mistyped path fail instead of silently passing.
 
