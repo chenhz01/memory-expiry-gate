@@ -1,5 +1,5 @@
 name: memory-expiry-gate
-description: Give every memory a TTL, then prove the expiry semantics actually hold.
+description: Agent memory expiry policy: give every memory a TTL and prove the expiry semantics actually hold.
 branding:
   icon: shield
   color: blue
